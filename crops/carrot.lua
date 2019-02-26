@@ -29,11 +29,8 @@ minetest.register_craft({
 	output = "farming:carrot_juice",
 	type = "shapeless",
 	recipe = {
-		"vessels:drinking_glass", "group:food_carrot", "farming:juicer"
-	},
-	replacements = {
-		{"group:food_juicer", "farming:juicer"},
-	},
+		"vessels:drinking_glass", "group:food_carrot"
+	}
 })
 
 -- golden carrot

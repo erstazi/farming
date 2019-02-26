@@ -68,11 +68,10 @@ minetest.register_craft({
 	recipe = {
 		{"flowers:rose", "flowers:rose", "flowers:rose"},
 		{"flowers:rose", "flowers:rose", "flowers:rose"},
-		{"bucket:bucket_water", "group:food_pot", "vessels:glass_bottle"},
+		{"bucket:bucket_water", "vessels:glass_bottle", ""},
 	},
 	replacements = {
 		{"bucket:bucket_water", "bucket:bucket_empty"},
-		{"group:food_pot", "farming:pot"},
 	}
 })
 
@@ -209,12 +208,7 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:jaffa_cake",
 	recipe = {
-		"farming:baking_tray", "group:food_egg", "group:food_sugar",
-		"group:food_flour", "group:food_cocoa", "group:food_orange",
-		"group:food_milk"
-	},
-	replacements = {
-		{"farming:baking_tray", "farming:baking_tray"},
-		{"mobs:bucket_milk", "bucket:bucket_empty"}
+		"group:food_egg", "group:food_sugar", "group:food_flour",
+        "group:food_cocoa", "group:food_orange", "group:food_milk"
 	}
 })

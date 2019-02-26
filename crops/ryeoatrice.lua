@@ -21,10 +21,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour",
 	recipe = {
-		"farming:rye", "farming:rye", "farming:rye", "farming:rye",
-		"farming:mortar_pestle"
+		"farming:rye", "farming:rye", "farming:rye", "farming:rye"
 	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}},
 })
 
 -- Oats
@@ -45,10 +43,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour",
 	recipe = {
-		"farming:oat", "farming:oat", "farming:oat", "farming:oat",
-		"farming:mortar_pestle"
+		"farming:oat", "farming:oat", "farming:oat", "farming:oat"
 	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}},
 })
 
 -- Rice
@@ -82,10 +78,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:rice_flour",
 	recipe = {
-		"farming:rice", "farming:rice", "farming:rice", "farming:rice",
-		"farming:mortar_pestle"
+		"farming:rice", "farming:rice", "farming:rice", "farming:rice"
 	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}},
 })
 
 minetest.register_craft({
@@ -107,10 +101,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour_multigrain",
 	recipe = {
-		"farming:wheat", "farming:barley", "farming:oat",
-		"farming:rye", "farming:mortar_pestle"
+		"farming:wheat", "farming:barley", "farming:oat", "farming:rye"
 	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}},
 })
 
 -- Multigrain bread

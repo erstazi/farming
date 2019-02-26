@@ -36,10 +36,9 @@ minetest.register_craft( {
 	output = "farming:coffee_cup",
 	type = "shapeless",
 	recipe = {"vessels:drinking_glass", "group:food_coffee",
-		"bucket:bucket_water", "group:food_saucepan"},
+		"bucket:bucket_water"},
 	replacements = {
 		{"bucket:bucket_water", "bucket:bucket_empty"},
-		{"group:food_saucepan", "farming:saucepan"},
 	}
 })
 

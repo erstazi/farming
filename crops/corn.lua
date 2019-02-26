@@ -42,11 +42,10 @@ minetest.register_craftitem("farming:cornstarch", {
 minetest.register_craft({
 	output = "farming:cornstarch",
 	recipe = {
-		{"group:food_mortar_pestle", "group:food_corn_cooked", "group:food_baking_tray"},
-		{"", "group:food_bowl", ""},
+		{"group:food_corn_cooked"},
+		{"group:food_bowl"},
 	},
 	replacements = {
-		{"group:food_mortar_pestle", "farming:mortar_pestle"},
 		{"group:food_baking_tray", "farming:baking_tray"},
 	}
 })

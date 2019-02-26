@@ -82,11 +82,7 @@ minetest.register_craftitem("farming:flour", {
 minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour",
-	recipe = {
-		"farming:wheat", "farming:wheat", "farming:wheat",
-		"farming:wheat", "farming:mortar_pestle"
-	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}},
+	recipe = {"farming:wheat", "farming:wheat", "farming:wheat", "farming:wheat"}
 })
 
 -- bread
@@ -115,8 +111,7 @@ minetest.register_craftitem("farming:bread_slice", {
 minetest.register_craft({
 	type = "shapeless",
 	output = "farming:bread_slice 5",
-	recipe = {"farming:bread", "group:food_cutting_board"},
-	replacements = {{"group:food_cutting_board", "farming:cutting_board"}},
+	recipe = {"group:food_bread"},
 })
 
 -- toast
