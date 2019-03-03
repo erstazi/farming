@@ -313,7 +313,7 @@ end
 minetest.register_craftitem("farming:hoe_bomb", {
 	description = S("Hoe Bomb (use or throw on grassy areas to hoe land"),
 	inventory_image = "farming_hoe_bomb.png",
-	groups = {flammable = 2, not_in_creative_inventory = 1},
+	groups = {flammable = 2},
 	on_use = function(itemstack, user, pointed_thing)
 
 		if pointed_thing.type == "node" then
@@ -329,6 +329,15 @@ minetest.register_craftitem("farming:hoe_bomb", {
 			end
 		end
 	end,
+})
+
+minetest.register_craft({
+	output = "farming:hoe_bomb",
+	recipe = {
+        {"", "farming:hoe_steel", ""},
+		{"farming:hoe_steel", "tnt:tnt", "farming:hoe_steel"},
+		{"", "farming:hoe_steel", ""},
+	}
 })
 
 -- Mithril Scythe (special item)
