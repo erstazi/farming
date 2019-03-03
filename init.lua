@@ -623,6 +623,8 @@ farming.pineapple = true
 farming.peas = true
 farming.beetroot = true
 farming.grains = true
+farming.oregano = true
+farming.artichoke = true
 farming.rarety = 0.002 -- 0.006
 
 
@@ -686,6 +688,8 @@ ddoo("peas.lua", farming.peas)
 ddoo("beetroot.lua", farming.beetroot)
 ddoo("chili.lua", farming.chili)
 ddoo("ryeoatrice.lua", farming.grains)
+ddoo("oregano.lua", farming.oregano)
+ddoo("artichoke.lua", farming.artichoke)
 
 dofile(farming.path.."/food.lua")
 dofile(farming.path.."/mapgen.lua")

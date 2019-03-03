@@ -30,6 +30,7 @@ farming.pineapple = true
 farming.peas = true
 farming.beetroot = true
 farming.grains = true
+farming.oregano = true
 
 -- rarety of crops on map, default is 0.001 (higher number = more crops)
 farming.rarety = 0.002
