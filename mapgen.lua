@@ -178,7 +178,7 @@ minetest.register_decoration({
 	y_min = 1,
 	y_max = 13,
 	decoration = {"farming:artichoke_5"},
-	spawn_by = "group:grass",
+	spawn_by = "group:tree",
 	num_spawn_by = 1,
 })
 end
