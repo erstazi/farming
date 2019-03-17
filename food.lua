@@ -215,21 +215,19 @@ minetest.register_craft({
 
 -- Patatas a la importancia
 
-if minetest.get_modpath("mobs") then
-    minetest.register_craftitem("farming:patatas_importancia", {
-        description = S("Patatas a la importancia"),
-        inventory_image = "farming_patatas_importancia.png",
-        on_use = minetest.item_eat(8),
-    })
+minetest.register_craftitem("farming:patatas_importancia", {
+    description = S("Patatas a la importancia"),
+    inventory_image = "farming_patatas_importancia.png",
+    on_use = minetest.item_eat(8),
+})
 
-    minetest.register_craft({
-        type = "shaped",
-        output = "farming:patatas_importancia",
-        recipe = {
-            {"farming:potato", "farming:potato", "farming:potato"},
-            {"mobs:egg", "farming:flour",  "mobs:egg"},
-            {"farming:onion", "group:food_bowl",  "farming:garlic_clove"}
-        },
-        replacements = {{"group:food_bowl", "farming:bowl"}}
-    })
-end
+minetest.register_craft({
+    type = "shaped",
+    output = "farming:patatas_importancia",
+    recipe = {
+        {"farming:potato", "farming:parsley", "farming:potato"},
+        {"group:food_egg", "farming:flour",  "group:food_egg"},
+        {"farming:onion", "group:food_bowl",  "farming:garlic_clove"}
+    },
+    replacements = {{"group:food_bowl", "farming:bowl"}}
+})
