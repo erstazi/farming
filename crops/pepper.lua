@@ -19,16 +19,32 @@ minetest.register_craftitem("farming:peppercorn", {
 
 -- green pepper
 minetest.register_craftitem("farming:pepper", {
-	description = S("Pepper"),
+	description = S("Green Pepper"),
 	inventory_image = "crops_pepper.png",
 	on_use = minetest.item_eat(2),
+	groups = {food_pepper = 1, flammable = 3},
+})
+
+-- yellow pepper
+minetest.register_craftitem("farming:pepper_y", {
+	description = S("Yellow Pepper"),
+	inventory_image = "crops_pepper_y.png",
+	on_use = minetest.item_eat(4),
+	groups = {food_pepper = 1, flammable = 3},
+})
+
+-- red pepper
+minetest.register_craftitem("farming:pepper_r", {
+	description = S("Red Pepper"),
+	inventory_image = "crops_pepper_r.png",
+	on_use = minetest.item_eat(6),
 	groups = {food_pepper = 1, flammable = 3},
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "farming:peppercorn",
-	recipe = {"farming:pepper"}
+	recipe = {"group:food_pepper"}
 })
 
 -- ground pepper
@@ -94,7 +110,6 @@ minetest.register_node("farming:pepper_4", table.copy(crop_def))
 
 -- stage 5
 crop_def.tiles = {"crops_pepper_plant_5.png"}
-crop_def.groups.growing = 0
 crop_def.drop = {
 	max_items = 2, items = {
 		{items = {'farming:pepper 2'}, rarity = 1},
@@ -104,11 +119,68 @@ crop_def.drop = {
 }
 minetest.register_node("farming:pepper_5", table.copy(crop_def))
 
+-- stage 6 (yellow pepper)
+crop_def.tiles = {"crops_pepper_plant_6.png"}
+crop_def.drop = {
+	max_items = 2, items = {
+		{items = {'farming:pepper_y 2'}, rarity = 1},
+		{items = {'farming:pepper_y'}, rarity = 2},
+		{items = {'farming:pepper'}, rarity = 3},
+	}
+}
+minetest.register_node("farming:pepper_6", table.copy(crop_def))
+
+-- stage 7 (red pepper)
+crop_def.tiles = {"crops_pepper_plant_7.png"}
+crop_def.drop = {
+	max_items = 2, items = {
+		{items = {'farming:pepper_r 2'}, rarity = 1},
+		{items = {'farming:pepper_r'}, rarity = 2},
+		{items = {'farming:pepper_y'}, rarity = 3},
+	}
+}
+minetest.register_node("farming:pepper_7", table.copy(crop_def))
+crop_def.groups.growing = 0
+
 -- add to registered_plants
 farming.registered_plants["farming:pepper"] = {
 	crop = "farming:pepper",
 	seed = "farming:peppercorn",
 	minlight = 13,
 	maxlight = 15,
-	steps = 5
+	steps = 7
 }
+
+-- adding random pepper types after map generation
+minetest.register_on_generated(function(minp, maxp)
+    if maxp.y < 0 then
+		return
+	end
+    
+    local pos, change
+    local pepper = minetest.find_nodes_in_area(minp, maxp, "farming:pepper_5")
+    
+    for n = 1, #pepper do
+        
+        pos = pepper[n]
+        change = math.random(1,26)
+        
+        if change > 11 then
+            return
+            
+        elseif change > 4 then
+            if minetest.get_node_light(pos) > 12 then
+                minetest.swap_node(pos, {
+					name = "farming:pepper_6"
+				})
+            end
+            
+        elseif change <= 4 then
+            if minetest.get_node_light(pos) > 12 then
+                minetest.swap_node(pos, {
+					name = "farming:pepper_7"
+				})
+            end
+        end
+    end
+end)
