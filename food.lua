@@ -225,9 +225,9 @@ minetest.register_craft({
     type = "shaped",
     output = "farming:patatas_importancia",
     recipe = {
-        {"farming:potato", "farming:parsley", "farming:potato"},
-        {"group:food_egg", "farming:flour",  "group:food_egg"},
-        {"farming:onion", "group:food_bowl",  "farming:garlic_clove"}
+        {"farming:potato", "group:food_parsley", "farming:potato"},
+        {"group:food_egg", "group:food_flour",  "group:food_egg"},
+        {"group:food_onion", "group:food_bowl",  "farming:garlic_clove"}
     },
     replacements = {{"group:food_bowl", "farming:bowl"}}
 })

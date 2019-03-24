@@ -96,18 +96,18 @@ minetest.register_craft({
 
 ---- Neapolitan Pizza
 minetest.register_craftitem("farming:pizza_neapolitan", {
-    description = S("Napolitan Pizza"),
+    description = S("Neapolitan Pizza"),
     inventory_image = "farming_pizza_neapolitan.png",
     on_use = minetest.item_eat(6),
 })
 
-if minetest.get_modpath("mobs") then
+if minetest.get_modpath("mobs") and mobs and mobs.mod == "redo" then
     minetest.register_craft({
         type = "shapeless",
         output = "farming:pizza_neapolitan",
         recipe = {
             "farming:pizza_dough", "farming:tomato", "farming:garlic_clove",
-            "mobs:cheese", "farming:oregano"
+            "group:food_cheese", "farming:oregano"
         }
     })
 else
@@ -116,6 +116,33 @@ else
         output = "farming:pizza_neapolitan",
         recipe = {
             "farming:pizza_dough", "farming:tomato", "farming:garlic_clove",
+            "farming:oregano"
+        }
+    })
+end
+
+---- Hawaiian Pizza
+minetest.register_craftitem("farming:pizza_hawaiian", {
+    description = S("Hawaiian Pizza"),
+    inventory_image = "farming_pizza_hawaiian.png",
+    on_use = minetest.item_eat(6),
+})
+
+if minetest.get_modpath("mobs") and mobs and mobs.mod == "redo" then
+    minetest.register_craft({
+        type = "shapeless",
+        output = "farming:pizza_hawaiian",
+        recipe = {
+            "farming:pizza_dough", "farming:tomato", "group:food_cheese",
+            "group:food_pork", "farming:pineapple_ring", "farming:oregano"
+        }
+    })
+else
+    minetest.register_craft({
+        type = "shapeless",
+        output = "farming:pizza_hawaiian",
+        recipe = {
+            "farming:pizza_dough", "farming:tomato", "farming:pineapple_ring",
             "farming:oregano"
         }
     })

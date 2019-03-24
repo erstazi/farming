@@ -56,6 +56,34 @@ minetest.register_craft({
 	}
 })
 
+-- potato strips
+minetest.register_craftitem("farming:potato_strips", {
+	description = S("Potato strips"),
+	inventory_image = "farming_potato_strips.png",
+    groups = {flammable = 1}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:potato_strips",
+	recipe = {"group:food_potato"}
+})
+
+-- french fries
+minetest.register_craftitem("farming:french_fries", {
+	description = S("French fries"),
+	inventory_image = "farming_potato_fries.png",
+    groups = {flammable = 3},
+	on_use = minetest.item_eat(7)
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 6,
+	output = "farming:french_fries",
+	recipe = "farming:potato_strips"
+})
+
 -- potato definition
 local crop_def = {
 	drawtype = "plantlike",
