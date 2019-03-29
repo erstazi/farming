@@ -231,3 +231,21 @@ minetest.register_craft({
     },
     replacements = {{"group:food_bowl", "farming:bowl"}}
 })
+
+-- Meat burger
+
+minetest.register_craftitem("farming:burger_meat", {
+	description = S("Meat Burger"),
+	inventory_image = "farming_burger_meat.png",
+	on_use = minetest.item_eat(6),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:burger_meat",
+	recipe = {
+		"farming:bread", "group:food_meat", "group:food_cheese",
+        "group:food_tomato", "group:food_cucumber", "group:food_onion",
+        "group:food_lettuce"
+	}
+})

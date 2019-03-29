@@ -7,7 +7,7 @@
 
 local S = farming.intllib
 
--- potato
+-- onion
 minetest.register_craftitem("farming:onion", {
 	description = S("Onion"),
 	inventory_image = "crops_onion.png",
