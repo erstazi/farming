@@ -218,7 +218,7 @@ minetest.register_craft({
 minetest.register_craftitem("farming:patatas_importancia", {
     description = S("Patatas a la importancia"),
     inventory_image = "farming_patatas_importancia.png",
-    on_use = minetest.item_eat(8),
+    on_use = minetest.item_eat(8, "farming:bowl"),
 })
 
 minetest.register_craft({
@@ -229,7 +229,21 @@ minetest.register_craft({
         {"group:food_egg", "group:food_flour",  "group:food_egg"},
         {"group:food_onion", "group:food_bowl",  "farming:garlic_clove"}
     },
-    replacements = {{"group:food_bowl", "farming:bowl"}}
+})
+
+-- Potato omelet
+
+minetest.register_craftitem("farming:potato_omelet", {
+    description = S("Potato omelet"),
+    inventory_image = "farming_potato_omelet.png",
+    on_use = minetest.item_eat(6, "farming:bowl"),
+})
+
+minetest.register_craft({
+    type = "shapeless",
+    output = "farming:potato_omelet",
+    recipe = {"group:food_egg", "farming:potato", "group:food_onion",
+              "group:food_bowl"},
 })
 
 -- Meat burger
@@ -247,5 +261,53 @@ minetest.register_craft({
 		"farming:bread", "group:food_meat", "group:food_cheese",
         "group:food_tomato", "group:food_cucumber", "group:food_onion",
         "group:food_lettuce"
+	}
+})
+
+-- Paella
+
+minetest.register_craftitem("farming:paella", {
+	description = S("Paella"),
+	inventory_image = "farming_paella.png",
+	on_use = minetest.item_eat(8, "farming:bowl"),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:paella",
+	recipe = {
+		"group:food_rice", "dye:orange", "farming:pepper_r",
+        "group:food_peas", "group:food_chicken", "group:food_bowl"
+	}
+})
+
+-- Gazpacho
+
+minetest.register_craftitem("farming:gazpacho_torta", {
+	description = S("Torta de Gazpacho"),
+	inventory_image = "farming_gazpacho_torta.png",
+	on_use = minetest.item_eat(3),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:gazpacho_torta",
+	recipe = {"farming:salt", "farming:flour", "bucket:bucket_water"},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+})
+
+minetest.register_craftitem("farming:gazpacho", {
+	description = S("Gazpacho"),
+	inventory_image = "farming_gazpacho.png",
+	on_use = minetest.item_eat(8, "farming:bowl"),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:gazpacho",
+	recipe = {
+		"farming:gazpacho_torta", "group:food_garlic_clove", "farming:pepper",
+        "farming:pepper_r", "group:food_rabbit", "group:food_parsley",
+        "group:food_bowl"
 	}
 })
