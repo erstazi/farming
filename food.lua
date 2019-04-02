@@ -311,3 +311,32 @@ minetest.register_craft({
         "group:food_bowl"
 	}
 })
+
+-- Olive oil
+
+minetest.register_node("farming:olive_oil", {
+	description = S("Olive Oil"),
+	drawtype = "plantlike",
+	tiles = {"olive_oil.png"},
+	inventory_image = "olive_oil.png",
+	wield_image = "olive_oil.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+    on_use = minetest.item_eat(2, "vessels:glass_bottle"),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults(),
+    
+})
+
+minetest.register_craft({
+	output = "farming:olive_oil",
+	recipe = {
+		{ "vessels:glass_bottle", "group:food_olive", "group:food_olive"},
+		{ "group:food_olive", "group:food_olive", ""},
+	}
+})
