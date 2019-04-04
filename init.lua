@@ -6,7 +6,7 @@
 ]]
 
 farming = {
-	mod = "redo",
+	mod = "undo",
 	version = "20190111",
 	path = minetest.get_modpath("farming"),
 	select = {
