@@ -222,12 +222,12 @@ minetest.register_craftitem("farming:patatas_importancia", {
 })
 
 minetest.register_craft({
-    type = "shaped",
+    type = "shapeless",
     output = "farming:patatas_importancia",
     recipe = {
-        {"farming:potato", "group:food_parsley", "farming:potato"},
-        {"group:food_egg", "group:food_flour",  "group:food_egg"},
-        {"group:food_onion", "group:food_bowl",  "farming:garlic_clove"}
+        "farming:potato", "group:food_parsley", "farming:potato",
+        "group:food_egg", "group:food_flour",  "farming:onion",
+        "farming:garlic_clove", "group:food_bowl"
     },
 })
 
