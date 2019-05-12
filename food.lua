@@ -16,6 +16,20 @@ minetest.register_craft({
 	recipe = "default:papyrus",
 })
 
+-- Sugar caramel
+
+minetest.register_craftitem("farming:caramel", {
+	description = S("Caramel"),
+	inventory_image = "farming_caramel.png",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 6,
+	output = "farming:caramel",
+	recipe = "group:food_sugar",
+})
+
 
 --= Salt
 
@@ -339,4 +353,20 @@ minetest.register_craft({
 		{ "vessels:glass_bottle", "group:food_olive", "group:food_olive"},
 		{ "group:food_olive", "group:food_olive", ""},
 	}
+})
+
+-- Mayonnaise
+
+minetest.register_craftitem("farming:mayonnaise", {
+	description = S("Mayonnaise"),
+	inventory_image = "farming_mayo.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:mayonnaise",
+	recipe = {"farming:olive_oil", "group:food_lemon",
+              "group:food_egg", "farming:salt"
+    }
 })

@@ -84,6 +84,20 @@ minetest.register_craft({
 	recipe = "farming:potato_strips"
 })
 
+-- Pommes Schranke
+
+minetest.register_craftitem("farming:pommes_schranke", {
+    description = S("Pommes Schranke"),
+    inventory_image = "farming_pommes_schranke.png",
+    on_use = minetest.item_eat(8),
+})
+
+minetest.register_craft({
+    type = "shapeless",
+    output = "farming:pommes_schranke",
+    recipe = {"farming:french_fries", "farming:tomato", "farming:mayonnaise"}
+})
+
 -- potato definition
 local crop_def = {
 	drawtype = "plantlike",

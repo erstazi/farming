@@ -44,10 +44,91 @@ minetest.register_craft({
 	recipe = {
 		{"group:food_corn_cooked"},
 		{"group:food_bowl"},
-	},
-	replacements = {
-		{"group:food_baking_tray", "farming:baking_tray"},
 	}
+})
+
+-- oiled, buttered and sugared popcorn
+minetest.register_craftitem("farming:corn_oil", {
+	description = S("Oiled corn"),
+	inventory_image = "farming_corn_oiled.png",
+	groups = {flammable = 2}
+})
+
+minetest.register_craft({
+    type = "shapeless",
+	output = "farming:corn_oil",
+	recipe = {
+		"group:food_corn", "farming:olive_oil", "farming:salt"
+	}
+})
+
+minetest.register_craftitem("farming:corn_butter", {
+	description = S("Corn with butter"),
+	inventory_image = "farming_corn_buttered.png",
+	groups = {flammable = 2}
+})
+
+minetest.register_craft({
+    type = "shapeless",
+	output = "farming:corn_butter",
+	recipe = {
+		"group:food_corn", "group:food_butter"
+	}
+})
+
+minetest.register_craftitem("farming:corn_sugar", {
+	description = S("Corn with sugar caramel"),
+	inventory_image = "farming_corn_sugared.png",
+	groups = {flammable = 2}
+})
+
+minetest.register_craft({
+    type = "shapeless",
+	output = "farming:corn_sugar",
+	recipe = {
+		"group:food_corn", "farming:caramel", "dye:red",
+        "dye:green", "dye:blue"
+	}
+})
+
+
+minetest.register_craftitem("farming:popcorn", {
+	description = S("Popcorn"),
+	inventory_image = "farming_popcorn.png",
+	groups = {food_popcorn = 1, flammable = 2},
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 10,
+	output = "farming:popcorn",
+	recipe = "farming:corn_oil",
+})
+
+minetest.register_craftitem("farming:popcorn_butter", {
+	description = S("Butter Popcorn"),
+	inventory_image = "farming_popcorn_butter.png",
+	groups = {food_popcorn = 1, flammable = 2},
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 10,
+	output = "farming:popcorn_butter",
+	recipe = "farming:corn_butter",
+})
+
+minetest.register_craftitem("farming:popcorn_sugar", {
+	description = S("Caramel Popcorn"),
+	inventory_image = "farming_popcorn_sugar.png",
+	groups = {food_popcorn = 1, flammable = 2},
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 10,
+	output = "farming:popcorn_sugar",
+	recipe = "farming:corn_sugar",
 })
 
 -- ethanol (thanks to JKMurray for this idea)
