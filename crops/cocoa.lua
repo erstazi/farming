@@ -108,6 +108,21 @@ minetest.register_craft( {
 	}
 })
 
+-- cocoa with milk glass
+minetest.register_craftitem("farming:cocoa_glass", {
+	description = S("Cocoa Glass"),
+	inventory_image = "farming_cocoa_milk_glass.png",
+	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
+})
+
+minetest.register_craft( {
+    type = "shapeless",
+	output = "farming:cocoa_glass",
+	recipe = {
+		"group:food_cocoa", "group:food_milk", "vessels:drinking_glass"
+	}
+})
+
 -- cocoa definition
 local crop_def = {
 	drawtype = "plantlike",

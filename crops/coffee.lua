@@ -41,13 +41,6 @@ minetest.register_craft( {
 	}
 })
 
-minetest.register_craft({
-	type = "cooking",
-	cooktime = 5,
-	output = "farming:coffee_cup_hot",
-	recipe = "farming:coffee_cup"
-})
-
 -- hot cup of coffee
 minetest.register_node("farming:coffee_cup_hot", {
 	description = S("Hot Cup of Coffee"),
@@ -64,6 +57,114 @@ minetest.register_node("farming:coffee_cup_hot", {
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	on_use = minetest.item_eat(3, "vessels:drinking_glass"),
 	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 5,
+	output = "farming:coffee_cup_hot",
+	recipe = "farming:coffee_cup"
+})
+
+-- coffee with milk
+minetest.register_node("farming:coffee_milk", {
+	description = S("Coffee with Milk"),
+	drawtype = "torchlike", --"plantlike",
+	tiles = {"farming_coffee_milk_hot.png"},
+	inventory_image = "farming_coffee_milk_hot.png",
+	wield_image = "farming_coffee_milk_hot.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.25, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	on_use = minetest.item_eat(3, "vessels:drinking_glass"),
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "farming:coffee_milk",
+	type = "shapeless",
+	recipe = {"farming:coffee_cup_hot", "group:food_milk"},
+})
+
+-- caramel coffee
+minetest.register_node("farming:coffee_caramel", {
+	description = S("Caramel Latte"),
+	drawtype = "torchlike", --"plantlike",
+	tiles = {"farming_coffee_caramel_hot.png"},
+	inventory_image = "farming_coffee_caramel_hot.png",
+	wield_image = "farming_coffee_caramel_hot.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.25, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "farming:coffee_caramel",
+	type = "shapeless",
+	recipe = {
+        "farming:coffee_cup_hot", "group:food_milk", "group:food_sugar",
+        "farming:caramel", "group:food_cocoa"
+    },
+})
+
+-- cappuccino
+minetest.register_node("farming:cappuccino", {
+	description = S("Cappuccino"),
+	drawtype = "torchlike", --"plantlike",
+	tiles = {"farming_coffee_cappuccino_hot.png"},
+	inventory_image = "farming_coffee_cappuccino_hot.png",
+	wield_image = "farming_coffee_cappuccino_hot.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.25, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "farming:cappuccino",
+	type = "shapeless",
+	recipe = {
+        "farming:coffee_cup_hot", "group:food_milk", "group:food_cocoa"
+    },
+})
+
+-- carajillo (hot coffee with brandy)
+minetest.register_node("farming:carajillo", {
+	description = S("Carajillo (hot coffee with brandy)"),
+	drawtype = "torchlike", --"plantlike",
+	tiles = {"farming_coffee_carajillo_hot.png"},
+	inventory_image = "farming_coffee_carajillo_hot.png",
+	wield_image = "farming_coffee_carajillo_hot.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.25, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "farming:carajillo",
+	type = "shapeless",
+	recipe = {"farming:coffee_cup_hot", "group:food_brandy"},
 })
 
 -- coffee definition
