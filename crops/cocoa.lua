@@ -120,6 +120,9 @@ minetest.register_craft( {
 	output = "farming:cocoa_glass",
 	recipe = {
 		"group:food_cocoa", "group:food_milk", "vessels:drinking_glass"
+	},
+    replacements = {
+		{"mobs:bucket_milk", "bucket:bucket_empty"},
 	}
 })
 
