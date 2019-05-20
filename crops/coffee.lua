@@ -88,6 +88,9 @@ minetest.register_craft( {
 	output = "farming:coffee_milk",
 	type = "shapeless",
 	recipe = {"farming:coffee_cup_hot", "group:food_milk"},
+    replacements = {
+		{"mobs:bucket_milk", "bucket:bucket_empty"},
+	}
 })
 
 -- caramel coffee
@@ -115,6 +118,9 @@ minetest.register_craft( {
         "farming:coffee_cup_hot", "group:food_milk", "group:food_sugar",
         "farming:caramel", "group:food_cocoa"
     },
+    replacements = {
+		{"mobs:bucket_milk", "bucket:bucket_empty"},
+	}
 })
 
 -- cappuccino
@@ -141,6 +147,9 @@ minetest.register_craft( {
 	recipe = {
         "farming:coffee_cup_hot", "group:food_milk", "group:food_cocoa"
     },
+    replacements = {
+		{"mobs:bucket_milk", "bucket:bucket_empty"},
+	}
 })
 
 -- carajillo (hot coffee with brandy)

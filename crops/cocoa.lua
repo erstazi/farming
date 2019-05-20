@@ -122,7 +122,7 @@ minetest.register_craft( {
 		"group:food_cocoa", "group:food_milk", "vessels:drinking_glass"
 	},
     replacements = {
-		{"mobs:bucket_milk", "bucket:bucket_empty"},
+		{"mobs:bucket_milk", "bucket:bucket_empty"}
 	}
 })
 
