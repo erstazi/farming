@@ -368,5 +368,6 @@ minetest.register_craft({
 	output = "farming:mayonnaise",
 	recipe = {"farming:olive_oil", "group:food_lemon",
               "group:food_egg", "farming:salt"
-    }
+    },
+    replacements = {{"farming:olive_oil", "vessels:glass_bottle"}}
 })
