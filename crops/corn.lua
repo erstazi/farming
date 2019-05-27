@@ -92,10 +92,21 @@ minetest.register_craft({
 })
 
 
-minetest.register_craftitem("farming:popcorn", {
+minetest.register_node("farming:popcorn", {
 	description = S("Popcorn"),
+    drawtype = "plantlike",
+    tiles = {"farming_popcorn.png"},
 	inventory_image = "farming_popcorn.png",
-	groups = {food_popcorn = 1, flammable = 2},
+    wield_image = "farming_popcorn.png",
+    paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	groups = {food_popcorn = 1, flammable = 2, dig_immediate = 3, attached_node = 1},
+    on_use = minetest.item_eat(3, "farming:bowl"),
+    selection_box = {
+		type = "fixed",
+		fixed = {-0.45, -0.45, -0.45, 0.45, 0.3, 0.45}
+	},
 })
 
 minetest.register_craft({
@@ -105,10 +116,21 @@ minetest.register_craft({
 	recipe = "farming:corn_oil",
 })
 
-minetest.register_craftitem("farming:popcorn_butter", {
+minetest.register_node("farming:popcorn_butter", {
 	description = S("Butter Popcorn"),
+    drawtype = "plantlike",
+    tiles = {"farming_popcorn_butter.png"},
 	inventory_image = "farming_popcorn_butter.png",
-	groups = {food_popcorn = 1, flammable = 2},
+    wield_image = "farming_popcorn_butter.png",
+    paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	groups = {food_popcorn = 1, flammable = 2, dig_immediate = 3, attached_node = 1},
+    on_use = minetest.item_eat(4, "farming:bowl"),
+    selection_box = {
+		type = "fixed",
+		fixed = {-0.45, -0.45, -0.45, 0.45, 0.3, 0.45}
+	},
 })
 
 minetest.register_craft({
@@ -118,10 +140,21 @@ minetest.register_craft({
 	recipe = "farming:corn_butter",
 })
 
-minetest.register_craftitem("farming:popcorn_sugar", {
+minetest.register_node("farming:popcorn_sugar", {
 	description = S("Caramel Popcorn"),
+    drawtype = "plantlike",
+    tiles = {"farming_popcorn_sugar.png"},
 	inventory_image = "farming_popcorn_sugar.png",
-	groups = {food_popcorn = 1, flammable = 2},
+    wield_image = "farming_popcorn_sugar.png",
+    paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	groups = {food_popcorn = 1, flammable = 2, dig_immediate = 3, attached_node = 1},
+    on_use = minetest.item_eat(4, "farming:bowl"),
+    selection_box = {
+		type = "fixed",
+		fixed = {-0.45, -0.45, -0.45, 0.45, 0.3, 0.45}
+	},
 })
 
 minetest.register_craft({

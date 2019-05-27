@@ -357,10 +357,22 @@ minetest.register_craft({
 
 -- Mayonnaise
 
-minetest.register_craftitem("farming:mayonnaise", {
+minetest.register_node("farming:mayonnaise", {
 	description = S("Mayonnaise"),
+    drawtype = "plantlike",
+    tiles = {"farming_mayo.png"},
 	inventory_image = "farming_mayo.png",
-	on_use = minetest.item_eat(4),
+    wield_image = "farming_mayo.png",
+    paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	on_use = minetest.item_eat(3),
+    selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.45, 0.25}
+	},
+    groups = {food_mayonnaise = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults(),
 })
 
 minetest.register_craft({
