@@ -224,7 +224,8 @@ minetest.register_craft({
 	recipe = {
 		"group:food_egg", "group:food_sugar", "group:food_flour",
         "group:food_cocoa", "group:food_orange", "group:food_milk"
-	}
+	},
+    replacements = {{"mobs:bucket_milk", "bucket:bucket_empty"}}
 })
 
 -- Patatas a la importancia
