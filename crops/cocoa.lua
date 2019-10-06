@@ -21,7 +21,7 @@ local function place_cocoa(itemstack, placer, pointed_thing, plantname)
 	-- am I right-clicking on something that has a custom on_place set?
 	-- thanks to Krock for helping with this issue :)
 	local def = minetest.registered_nodes[under.name]
-	if placer and def and def.on_rightclick then
+	if placer and itemstack and def and def.on_rightclick then
 		return def.on_rightclick(pt.under, under, placer, itemstack)
 	end
 
@@ -159,7 +159,7 @@ local crop_def = {
 	walkable = false,
 	drop = {
 		items = {
-			{items = {'farming:cocoa_beans 1'}, rarity = 2},
+			{items = {"farming:cocoa_beans 1"}, rarity = 2},
 		}
 	},
 	selection_box = {
@@ -190,7 +190,7 @@ minetest.register_node("farming:cocoa_2", table.copy(crop_def))
 crop_def.tiles = {"farming_cocoa_3.png"}
 crop_def.drop = {
 	items = {
-		{items = {'farming:cocoa_beans 1'}, rarity = 1},
+		{items = {"farming:cocoa_beans 1"}, rarity = 1},
 	}
 }
 minetest.register_node("farming:cocoa_3", table.copy(crop_def))
@@ -201,9 +201,9 @@ crop_def.groups.growing = 0
 crop_def.growth_check = nil
 crop_def.drop = {
 	items = {
-		{items = {'farming:cocoa_beans 2'}, rarity = 1},
-		{items = {'farming:cocoa_beans 1'}, rarity = 2},
-		{items = {'farming:cocoa_beans 1'}, rarity = 4},
+		{items = {"farming:cocoa_beans 2"}, rarity = 1},
+		{items = {"farming:cocoa_beans 1"}, rarity = 2},
+		{items = {"farming:cocoa_beans 1"}, rarity = 4},
 	}
 }
 minetest.register_node("farming:cocoa_4", table.copy(crop_def))

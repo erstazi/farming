@@ -184,8 +184,8 @@ minetest.register_node("farming:wheat_4", table.copy(crop_def))
 crop_def.tiles = {"farming_wheat_5.png"}
 crop_def.drop = {
 	items = {
-		{items = {'farming:wheat'}, rarity = 2},
-		{items = {'farming:seed_wheat'}, rarity = 2},
+		{items = {"farming:wheat"}, rarity = 2},
+		{items = {"farming:seed_wheat"}, rarity = 2},
 	}
 }
 minetest.register_node("farming:wheat_5", table.copy(crop_def))
@@ -194,8 +194,8 @@ minetest.register_node("farming:wheat_5", table.copy(crop_def))
 crop_def.tiles = {"farming_wheat_6.png"}
 crop_def.drop = {
 	items = {
-		{items = {'farming:wheat'}, rarity = 2},
-		{items = {'farming:seed_wheat'}, rarity = 1},
+		{items = {"farming:wheat"}, rarity = 2},
+		{items = {"farming:seed_wheat"}, rarity = 1},
 	}
 }
 minetest.register_node("farming:wheat_6", table.copy(crop_def))
@@ -204,10 +204,10 @@ minetest.register_node("farming:wheat_6", table.copy(crop_def))
 crop_def.tiles = {"farming_wheat_7.png"}
 crop_def.drop = {
 	items = {
-		{items = {'farming:wheat'}, rarity = 1},
-		{items = {'farming:wheat'}, rarity = 3},
-		{items = {'farming:seed_wheat'}, rarity = 1},
-		{items = {'farming:seed_wheat'}, rarity = 3},
+		{items = {"farming:wheat"}, rarity = 1},
+		{items = {"farming:wheat"}, rarity = 3},
+		{items = {"farming:seed_wheat"}, rarity = 1},
+		{items = {"farming:seed_wheat"}, rarity = 3},
 	}
 }
 minetest.register_node("farming:wheat_7", table.copy(crop_def))
@@ -217,10 +217,10 @@ crop_def.tiles = {"farming_wheat_8.png"}
 crop_def.groups.growing = 0
 crop_def.drop = {
 	items = {
-		{items = {'farming:wheat'}, rarity = 1},
-		{items = {'farming:wheat'}, rarity = 3},
-		{items = {'farming:seed_wheat'}, rarity = 1},
-		{items = {'farming:seed_wheat'}, rarity = 3},
+		{items = {"farming:wheat"}, rarity = 1},
+		{items = {"farming:wheat"}, rarity = 3},
+		{items = {"farming:seed_wheat"}, rarity = 1},
+		{items = {"farming:seed_wheat"}, rarity = 3},
 	}
 }
 minetest.register_node("farming:wheat_8", table.copy(crop_def))

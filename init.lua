@@ -7,7 +7,7 @@
 
 farming = {
 	mod = "undo",
-	version = "20190625",
+	version = "20190728",
 	path = minetest.get_modpath("farming"),
 	select = {
 		type = "fixed",
@@ -421,7 +421,7 @@ function farming.place_seed(itemstack, placer, pointed_thing, plantname)
 	-- am I right-clicking on something that has a custom on_place set?
 	-- thanks to Krock for helping with this issue :)
 	local def = minetest.registered_nodes[under.name]
-	if placer and def and def.on_rightclick then
+	if placer and itemstack and def and def.on_rightclick then
 		return def.on_rightclick(pt.under, under, placer, itemstack)
 	end
 
@@ -461,7 +461,8 @@ function farming.place_seed(itemstack, placer, pointed_thing, plantname)
 
 		minetest.sound_play("default_place_node", {pos = pt.above, gain = 1.0})
 
-		if placer and not farming.is_creative(placer:get_player_name()) then
+		if placer and itemstack
+		and not farming.is_creative(placer:get_player_name()) then
 
 			local name = itemstack:get_name()
 

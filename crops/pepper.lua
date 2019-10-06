@@ -112,9 +112,9 @@ minetest.register_node("farming:pepper_4", table.copy(crop_def))
 crop_def.tiles = {"crops_pepper_plant_5.png"}
 crop_def.drop = {
 	max_items = 2, items = {
-		{items = {'farming:pepper 2'}, rarity = 1},
-		{items = {'farming:pepper'}, rarity = 2},
-		{items = {'farming:pepper'}, rarity = 3},
+		{items = {"farming:pepper 2"}, rarity = 1},
+		{items = {"farming:pepper"}, rarity = 2},
+		{items = {"farming:pepper"}, rarity = 3},
 	}
 }
 minetest.register_node("farming:pepper_5", table.copy(crop_def))
