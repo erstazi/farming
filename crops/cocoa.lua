@@ -110,7 +110,7 @@ minetest.register_craft( {
 
 -- cocoa with milk glass
 minetest.register_craftitem("farming:cocoa_glass", {
-	description = S("Cocoa Glass"),
+	description = S("Glass of Cocoa"),
 	inventory_image = "farming_cocoa_milk_glass.png",
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
 })

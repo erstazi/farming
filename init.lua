@@ -628,6 +628,8 @@ farming.artichoke = 0.001
 farming.parsley = 0.002
 farming.lettuce = 0.001
 farming.blackberry = 0.001
+farming.soy = 0.001
+farming.vanilla = 0.001
 farming.rarety = 0.002
 
 
@@ -696,6 +698,8 @@ ddoo("artichoke.lua", farming.artichoke)
 ddoo("parsley.lua", farming.parsley)
 ddoo("lettuce.lua", farming.lettuce)
 ddoo("blackberry.lua", farming.blackberry)
+ddoo("soy.lua", farming.soy)
+ddoo("vanilla.lua", farming.vanilla)
 
 dofile(farming.path.."/food.lua")
 dofile(farming.path.."/mapgen.lua")
