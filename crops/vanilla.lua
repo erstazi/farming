@@ -8,7 +8,7 @@ minetest.register_craftitem("farming:vanilla", {
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "farming:vanilla_1")
 	end,
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(1),
 })
 
 -- crop definition
@@ -27,6 +27,35 @@ local crop_def = {
 	},
 	sounds = default.node_sound_leaves_defaults()
 }
+
+-- vanilla extract
+minetest.register_node("farming:vanilla_extract", {
+	description = S("Vanilla Extract"),
+	drawtype = "plantlike",
+	tiles = {"farming_vanilla_extract.png"},
+	inventory_image = "farming_vanilla_extract.png",
+	wield_image = "farming_vanilla_extract.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "farming:vanilla_extract",
+	recipe = {
+		{ "group:food_vanilla", "group:food_vanilla", "group:food_vanilla"},
+		{ "group:food_vanilla", "farming:bottle_ethanol", "bucket:bucket_water"},
+	},
+    replacements = {
+		{"bucket:bucket_water", "bucket:bucket_empty"},
+	}
+})
 
 -- stage 1
 minetest.register_node("farming:vanilla_1", table.copy(crop_def))

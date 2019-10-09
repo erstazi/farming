@@ -37,7 +37,7 @@ minetest.register_craft( {
 	output = "farming:soy_milk",
 	recipe = {
 		"group:food_soy", "group:food_soy", "group:food_soy",
-        "group:food_vanilla", "bucket:bucket_water", "vessels:drinking_glass"
+        "farming:vanilla_extract", "bucket:bucket_water", "vessels:drinking_glass"
 	},
     replacements = {
 		{"bucket:bucket_water", "bucket:bucket_empty"}
