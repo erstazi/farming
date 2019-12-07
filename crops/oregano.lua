@@ -147,3 +147,37 @@ else
         }
     })
 end
+
+---- Carbonara Pizza
+minetest.register_craftitem("farming:pizza_carbonara", {
+    description = S("Carbonara Pizza"),
+    inventory_image = "farming_pizza_carbonara.png",
+    on_use = minetest.item_eat(6),
+})
+
+minetest.register_craft({
+    type = "shapeless",
+    output = "farming:pizza_carbonara",
+    recipe = {
+        "farming:pizza_dough", "farming:oregano", "group:food_milk",
+        "farming:tomato", "group:food_cheese", "group:food_pork",
+        "flowers:mushroom_brown"
+    }
+})
+
+---- Meatlovers Pizza
+minetest.register_craftitem("farming:pizza_meatlovers", {
+    description = S("Meatlovers Pizza"),
+    inventory_image = "farming_pizza_meatlovers.png",
+    on_use = minetest.item_eat(7),
+})
+
+minetest.register_craft({
+    type = "shapeless",
+    output = "farming:pizza_meatlovers",
+    recipe = {
+        "farming:pizza_dough", "farming:oregano", "mobs:meat",
+        "group:food_chicken", "group:food_pork", "group:food_cheese",
+        "farming:tomato"
+    }
+})
