@@ -384,3 +384,22 @@ minetest.register_craft({
     },
     replacements = {{"farming:olive_oil", "vessels:glass_bottle"}}
 })
+
+
+-- Flan
+
+minetest.register_craftitem("farming:flan", {
+	description = S("Vanilla Flan"),
+	inventory_image = "vanilla_flan.png",
+	on_use = minetest.item_eat(6),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:flan",
+	recipe = {
+		"group:food_sugar", "group:food_milk", "farming:caramel",
+        "group:food_egg", "group:food_egg", "farming:vanilla_extract"
+	},
+    replacements = {{"mobs:bucket_milk", "bucket:bucket_empty"}}
+})
