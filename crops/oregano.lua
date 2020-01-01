@@ -101,7 +101,7 @@ minetest.register_craftitem("farming:pizza_neapolitan", {
     on_use = minetest.item_eat(6),
 })
 
-if minetest.get_modpath("mobs") and mobs and mobs.mod == "redo" then
+if minetest.get_modpath("mobs") and minetest.get_modpath("mobs_animal") then
     minetest.register_craft({
         type = "shapeless",
         output = "farming:pizza_neapolitan",
@@ -128,7 +128,7 @@ minetest.register_craftitem("farming:pizza_hawaiian", {
     on_use = minetest.item_eat(6),
 })
 
-if minetest.get_modpath("mobs") and mobs and mobs.mod == "redo" then
+if minetest.get_modpath("mobs") and minetest.get_modpath("mobs_animal") then
     minetest.register_craft({
         type = "shapeless",
         output = "farming:pizza_hawaiian",
@@ -160,9 +160,9 @@ minetest.register_craft({
     output = "farming:pizza_carbonara",
     recipe = {
         "farming:pizza_dough", "farming:oregano", "group:food_milk",
-        "farming:tomato", "group:food_cheese", "group:food_pork",
-        "flowers:mushroom_brown"
-    }
+        "group:food_cheese", "group:food_pork", "flowers:mushroom_brown"
+    },
+    replacements = {{"mobs:bucket_milk", "bucket:bucket_empty"}}
 })
 
 ---- Meatlovers Pizza
