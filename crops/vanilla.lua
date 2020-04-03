@@ -57,6 +57,13 @@ minetest.register_craft( {
 	}
 })
 
+minetest.register_craft({
+	type = "fuel",
+	recipe = "farming:vanilla_extract",
+	burntime = 25,
+	replacements = {{ "farming:vanilla_extract", "vessels:glass_bottle" }}
+})
+
 -- stage 1
 minetest.register_node("farming:vanilla_1", table.copy(crop_def))
 
