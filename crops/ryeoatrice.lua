@@ -92,6 +92,23 @@ minetest.register_craft({
 	recipe = "farming:rice_flour"
 })
 
+-- Onigiri or rice ball
+minetest.register_craftitem("farming:rice_ball", {
+	description = S("Rice Ball"),
+	inventory_image = "farming_rice_ball.png",
+	wield_image = "farming_rice_ball.png",
+	on_use = minetest.item_eat(3),
+})
+
+minetest.register_craft({
+	output = "farming:rice_ball 2",
+	recipe = {
+		{"", "group:food_rice", ""},
+		{"group:food_rice", "group:food_rice", "group:food_rice"},
+		{"", "group:food_seaweed", ""}
+	}
+})
+
 -- Multigrain flour
 
 minetest.register_craftitem("farming:flour_multigrain", {
