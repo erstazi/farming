@@ -322,8 +322,7 @@ minetest.register_craft({
 	output = "farming:gazpacho",
 	recipe = {
 		"farming:gazpacho_torta", "group:food_garlic_clove", "farming:pepper",
-        "farming:pepper_r", "group:food_rabbit", "group:food_parsley",
-        "group:food_bowl"
+        "farming:pepper_r", "group:food_parsley", "group:food_bowl"
 	}
 })
 
@@ -338,7 +337,6 @@ minetest.register_node("farming:olive_oil", {
 	paramtype = "light",
 	is_ground_content = false,
 	walkable = false,
-    on_use = minetest.item_eat(2, "vessels:glass_bottle"),
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
@@ -351,8 +349,8 @@ minetest.register_node("farming:olive_oil", {
 minetest.register_craft({
 	output = "farming:olive_oil",
 	recipe = {
-		{ "vessels:glass_bottle", "group:food_olive", "group:food_olive"},
-		{ "group:food_olive", "group:food_olive", ""},
+		{ "vessels:glass_bottle", "ethereal:olive", "ethereal:olive"},
+		{ "ethereal:olive", "ethereal:olive", ""},
 	}
 })
 
@@ -402,4 +400,39 @@ minetest.register_craft({
         "group:food_egg", "group:food_egg", "farming:vanilla_extract"
 	},
     replacements = {{"mobs:bucket_milk", "bucket:bucket_empty"}}
+})
+
+
+-- Russian salad
+minetest.register_craftitem("farming:russian_salad", {
+	description = S("Russian Salad"),
+	inventory_image = "farming_russian_salad.png",
+	on_use = minetest.item_eat(9, "farming:bowl"),
+})
+
+minetest.register_craft({
+	output = "farming:russian_salad",
+	recipe = {
+		{"group:food_carrot", "group:food_peas", "farming:baked_potato"},
+		{"group:food_egg", "canned_food:canned_cucumber_plus", "group:food_mayonnaise"},
+		{"", "group:food_bowl", ""},
+	},
+    replacements = {{"canned_food:canned_cucumber_plus", "vessels:glass_bottle"}}
+})
+
+-- Heretic russian salad (spanish)
+minetest.register_craftitem("farming:ensaladilla_rusa", {
+	description = S("Ensaladilla Rusa"),
+	inventory_image = "farming_russian_salad_2.png",
+	on_use = minetest.item_eat(9, "farming:bowl"),
+})
+
+minetest.register_craft({
+	output = "farming:ensaladilla_rusa",
+	recipe = {
+		{"group:food_carrot", "group:food_peas", "farming:baked_potato"},
+		{"group:food_egg", "ethereal:pickled_olives", "group:food_mayonnaise"},
+		{"group:food_tuna_canned", "group:food_bowl", "farming:olive_oil"}
+	},
+    replacements = {{"farming:olive_oil", "vessels:glass_bottle"}}
 })
