@@ -6,7 +6,7 @@ local S = farming.intllib
 -- Rye
 
 farming.register_plant("farming:rye", {
-	description = "Rye seed",
+	description = S("Rye seed"),
 	paramtype2 = "meshoptions",
 	inventory_image = "farming_rye_seed.png",
 	steps = 8,
@@ -14,6 +14,7 @@ farming.register_plant("farming:rye", {
 })
 
 minetest.override_item("farming:rye", {
+	description = S("Rye"),
 	groups = {food_rye = 1, flammable = 4}
 })
 
@@ -28,7 +29,7 @@ minetest.register_craft({
 -- Oats
 
 farming.register_plant("farming:oat", {
-	description = "Oat seed",
+	description = S("Oat seed"),
 	paramtype2 = "meshoptions",
 	inventory_image = "farming_oat_seed.png",
 	steps = 8,
@@ -36,6 +37,7 @@ farming.register_plant("farming:oat", {
 })
 
 minetest.override_item("farming:oat", {
+	description = S("Oats"),
 	groups = {food_oats = 1, flammable = 4}
 })
 
@@ -50,7 +52,7 @@ minetest.register_craft({
 -- Rice
 
 farming.register_plant("farming:rice", {
-	description = "Rice grains",
+	description = S("Rice grains"),
 	paramtype2 = "meshoptions",
 	inventory_image = "farming_rice_seed.png",
 	steps = 8,
@@ -58,18 +60,19 @@ farming.register_plant("farming:rice", {
 })
 
 minetest.override_item("farming:rice", {
+	description = S("Rice"),
 	groups = {food_rice = 1, flammable = 4}
 })
 
 minetest.register_craftitem("farming:rice_bread", {
-	description = "Rice Bread",
+	description = S("Rice Bread"),
 	inventory_image = "farming_rice_bread.png",
 	on_use = minetest.item_eat(5),
 	groups = {food_rice_bread = 1, flammable = 2},
 })
 
 minetest.register_craftitem("farming:rice_flour", {
-	description = "Rice Flour",
+	description = S("Rice Flour"),
 	inventory_image = "farming_rice_flour.png",
 	groups = {food_rice_flour = 1, flammable = 1},
 })
