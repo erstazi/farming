@@ -37,6 +37,7 @@ farming.lettuce = 0.001
 farming.blackberry = 0.001
 farming.soy = 0.001
 farming.vanilla = 0.001
+farming.toadskin = 0.001
 
 -- default rarety of crops on map (higher number = more crops)
 farming.rarety = 0.002

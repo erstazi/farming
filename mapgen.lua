@@ -51,7 +51,8 @@ register_plant("parsley_3", 10, 40, nil, "", -1, farming.parsley)
 register_plant("lettuce_5", 5, 30, nil, "", -1, farming.lettuce)
 register_plant("blackberry_4", 3, 10, nil, "", -1, farming.blackberry)
 register_plant("soy_6", 20, 50, {"default:dirt_with_dry_grass", 
-    "default:dirt_with_rainforest_litter"}, "", -1, farming.soy)
+    "default:dirt_with_rainforest_litter",
+	"default:dry_dirt_with_dry_grass"}, "", -1, farming.soy)
 register_plant("vanilla_7", 5, 35, nil, "", -1, farming.vanilla)
 
 
@@ -61,6 +62,7 @@ if minetest.get_mapgen_setting("mg_name") == "v6" then
 	register_plant("cucumber_4", 1, 20, nil, "group:water", 1, farming.cucumber)
 	register_plant("melon_8", 1, 20, nil, "group:water", 1, farming.melon)
 	register_plant("pumpkin_8", 1, 20, nil, "group:water", 1, farming.pumpkin)
+    register_plant("toadskin_7", 1, 20, nil, "group:water", 1, farming.toadskin)
 else
 	-- v7 maps have a beach so plants growing near water is limited to 6 high
 	register_plant("carrot_8", 1, 15, nil, "", -1, farming.carrot)
@@ -68,6 +70,7 @@ else
 	register_plant("melon_8", 1, 6, {"default:dirt_with_dry_grass",
 		"default:dirt_with_rainforest_litter"}, "", -1, farming.melon)
 	register_plant("pumpkin_8", 1, 6, nil, "", -1, farming.pumpkin)
+    register_plant("toadskin_7", 1, 6, nil, "", -1, farming.toadskin)
 end
 
 if farming.hemp then
