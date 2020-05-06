@@ -13,16 +13,15 @@ minetest.register_craftitem("farming:melon_slice", {
 })
 
 minetest.register_craft({
+    type = "shapeless",
 	output = "farming:melon_8",
-	recipe = {
-		{"farming:melon_slice", "farming:melon_slice"},
-		{"farming:melon_slice", "farming:melon_slice"},
-	}
+	recipe = {"farming:melon_slice", "farming:melon_slice", "farming:melon_slice",
+              "farming:melon_slice", "farming:melon_slice"}
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "farming:melon_slice 4",
+	output = "farming:melon_slice 5",
 	recipe = {"farming:melon_8"},
 })
 

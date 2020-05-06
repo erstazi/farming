@@ -13,16 +13,15 @@ minetest.register_craftitem("farming:toadskin_slice", {
 })
 
 minetest.register_craft({
+    type = "shapeless",
 	output = "farming:toadskin_7",
-	recipe = {
-		{"farming:toadskin_slice", "farming:toadskin_slice"},
-		{"farming:toadskin_slice", "farming:toadskin_slice"},
-	}
+	recipe = {"farming:toadskin_slice", "farming:toadskin_slice", "farming:toadskin_slice",
+              "farming:toadskin_slice", "farming:toadskin_slice"},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "farming:toadskin_slice 4",
+	output = "farming:toadskin_slice 5",
 	recipe = {"farming:toadskin_7"},
 })
 
