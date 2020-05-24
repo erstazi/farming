@@ -3,7 +3,7 @@ local S = farming.intllib
 
 -- Melón piel de sapo (aka Toadskin or Santa Claus melon)
 minetest.register_craftitem("farming:toadskin_slice", {
-	description = S("Toadskin Melon Slice"),
+	description = S("Santa Claus Melon Slice"),
 	inventory_image = "farming_pieldesapo_slice.png",
 	groups = {seed = 2, food_toadskin_slice = 1, flammable = 3},
 	on_place = function(itemstack, placer, pointed_thing)
@@ -67,7 +67,7 @@ minetest.register_node("farming:toadskin_6", table.copy(crop_def))
 
 -- stage 7
 crop_def.drawtype = "nodebox"
-crop_def.description = S("Toadskin Melon")
+crop_def.description = S("Santa Claus Melon")
 crop_def.tiles = {"farming_pieldesapo_top.png", "farming_pieldesapo_top.png", "farming_pieldesapo_side.png"}
 crop_def.selection_box = {-.5, -.5, -.5, .5, .5, .5}
 crop_def.walkable = true
