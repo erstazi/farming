@@ -18,6 +18,25 @@ minetest.register_craftitem("farming:onion", {
 	on_use = minetest.item_eat(1),
 })
 
+-- onion soup
+minetest.register_craftitem("farming:onion_soup", {
+	description = S("Onion Soup"),
+	inventory_image = "farming_onion_soup.png",
+	groups = {flammable = 2},
+	on_use = minetest.item_eat(6, "farming:bowl"),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:onion_soup",
+	recipe = {
+		"group:food_onion", "group:food_onion", "group:food_pot",
+		"group:food_onion", "group:food_onion",
+		"group:food_onion", "group:food_onion", "group:food_bowl"
+	},
+	replacements = {{"farming:pot", "farming:pot"}}
+})
+
 -- crop definition
 local crop_def = {
 	drawtype = "plantlike",
