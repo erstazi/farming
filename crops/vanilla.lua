@@ -12,7 +12,7 @@ minetest.register_craftitem("farming:vanilla", {
 })
 
 -- crop definition
-local crop_def = {
+local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_vanilla_1.png"},
 	paramtype = "light",
@@ -65,44 +65,44 @@ minetest.register_craft({
 })
 
 -- stage 1
-minetest.register_node("farming:vanilla_1", table.copy(crop_def))
+minetest.register_node("farming:vanilla_1", table.copy(def))
 
 -- stage 2
-crop_def.tiles = {"farming_vanilla_2.png"}
-minetest.register_node("farming:vanilla_2", table.copy(crop_def))
+def.tiles = {"farming_vanilla_2.png"}
+minetest.register_node("farming:vanilla_2", table.copy(def))
 
 -- stage 3
-crop_def.tiles = {"farming_vanilla_3.png"}
-minetest.register_node("farming:vanilla_3", table.copy(crop_def))
+def.tiles = {"farming_vanilla_3.png"}
+minetest.register_node("farming:vanilla_3", table.copy(def))
 
 -- stage 4
-crop_def.tiles = {"farming_vanilla_4.png"}
-minetest.register_node("farming:vanilla_4", table.copy(crop_def))
+def.tiles = {"farming_vanilla_4.png"}
+minetest.register_node("farming:vanilla_4", table.copy(def))
 
 -- stage 5
-crop_def.tiles = {"farming_vanilla_5.png"}
-minetest.register_node("farming:vanilla_5", table.copy(crop_def))
+def.tiles = {"farming_vanilla_5.png"}
+minetest.register_node("farming:vanilla_5", table.copy(def))
 
 -- stage 6
-crop_def.tiles = {"farming_vanilla_6.png"}
-crop_def.visual_scale = 1.9
-minetest.register_node("farming:vanilla_6", table.copy(crop_def))
+def.tiles = {"farming_vanilla_6.png"}
+def.visual_scale = 1.9
+minetest.register_node("farming:vanilla_6", table.copy(def))
 
 -- stage 7
-crop_def.tiles = {"farming_vanilla_7.png"}
-crop_def.drop = {
+def.tiles = {"farming_vanilla_7.png"}
+def.drop = {
 	items = {
 		{items = {'farming:vanilla'}, rarity = 1},
 		{items = {'farming:vanilla'}, rarity = 2},
 		{items = {'farming:vanilla'}, rarity = 3},
 	}
 }
-minetest.register_node("farming:vanilla_7", table.copy(crop_def))
+minetest.register_node("farming:vanilla_7", table.copy(def))
 
 -- stage 8 (final)
-crop_def.tiles = {"farming_vanilla_8.png"}
-crop_def.groups.growing = 0
-crop_def.drop = {
+def.tiles = {"farming_vanilla_8.png"}
+def.groups.growing = 0
+def.drop = {
 	items = {
 		{items = {'farming:vanilla 2'}, rarity = 1},
 		{items = {'farming:vanilla 2'}, rarity = 2},
@@ -110,7 +110,7 @@ crop_def.drop = {
         {items = {'farming:vanilla 2'}, rarity = 3},
 	}
 }
-minetest.register_node("farming:vanilla_8", table.copy(crop_def))
+minetest.register_node("farming:vanilla_8", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:vanilla"] = {

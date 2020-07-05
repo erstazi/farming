@@ -13,7 +13,7 @@ minetest.register_craftitem("farming:blackberry", {
 })
 
 -- crop definition
-local crop_def = {
+local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_blackberry_1.png"},
 	paramtype = "light",
@@ -30,27 +30,27 @@ local crop_def = {
 }
 
 -- stage 1
-minetest.register_node("farming:blackberry_1", table.copy(crop_def))
+minetest.register_node("farming:blackberry_1", table.copy(def))
 
 -- stage 2
-crop_def.tiles = {"farming_blackberry_2.png"}
-minetest.register_node("farming:blackberry_2", table.copy(crop_def))
+def.tiles = {"farming_blackberry_2.png"}
+minetest.register_node("farming:blackberry_2", table.copy(def))
 
 -- stage 3
-crop_def.tiles = {"farming_blackberry_3.png"}
-minetest.register_node("farming:blackberry_3", table.copy(crop_def))
+def.tiles = {"farming_blackberry_3.png"}
+minetest.register_node("farming:blackberry_3", table.copy(def))
 
 -- stage 4 (final)
-crop_def.tiles = {"farming_blackberry_4.png"}
-crop_def.groups.growing = 0
-crop_def.drop = {
+def.tiles = {"farming_blackberry_4.png"}
+def.groups.growing = 0
+def.drop = {
 	items = {
 		{items = {'farming:blackberry 2'}, rarity = 1},
 		{items = {'farming:blackberry'}, rarity = 2},
 		{items = {'farming:blackberry'}, rarity = 3},
 	}
 }
-minetest.register_node("farming:blackberry_4", table.copy(crop_def))
+minetest.register_node("farming:blackberry_4", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:blackberry"] = {

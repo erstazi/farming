@@ -6,14 +6,14 @@ local S = farming.intllib
 minetest.register_craftitem("farming:sugar", {
 	description = S("Sugar"),
 	inventory_image = "farming_sugar.png",
-	groups = {food_sugar = 1, flammable = 3},
+	groups = {food_sugar = 1, flammable = 3}
 })
 
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 3,
 	output = "farming:sugar 2",
-	recipe = "default:papyrus",
+	recipe = "default:papyrus"
 })
 
 -- Sugar caramel
@@ -47,7 +47,7 @@ minetest.register_node("farming:salt", {
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
-	},
+	}
 })
 
 minetest.register_craft({
@@ -74,7 +74,7 @@ minetest.register_node("farming:rose_water", {
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
-	},
+	}
 })
 
 minetest.register_craft({
@@ -95,7 +95,7 @@ minetest.register_craftitem("farming:turkish_delight", {
 	description = S("Turkish Delight"),
 	inventory_image = "farming_turkish_delight.png",
 	groups = {flammable = 3},
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(2)
 })
 
 minetest.register_craft({
@@ -103,12 +103,12 @@ minetest.register_craft({
 	recipe = {
 		{"group:food_gelatin", "group:food_sugar", "group:food_gelatin"},
 		{"group:food_sugar", "group:food_rose_water", "group:food_sugar"},
-		{"group:food_cornstarch", "group:food_sugar", "dye:pink"},
+		{"group:food_cornstarch", "group:food_sugar", "dye:pink"}
 	},
 	replacements = {
 		{"group:food_cornstarch", "farming:bowl"},
-		{"group:food_rose_water", "vessels:glass_bottle"},
-	},
+		{"group:food_rose_water", "vessels:glass_bottle"}
+	}
 })
 
 --= Garlic Bread
@@ -117,13 +117,13 @@ minetest.register_craftitem("farming:garlic_bread", {
 	description = S("Garlic Bread"),
 	inventory_image = "farming_garlic_bread.png",
 	groups = {flammable = 3},
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(2)
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "farming:garlic_bread",
-	recipe = {"group:food_toast", "group:food_garlic_clove", "group:food_garlic_clove"},
+	recipe = {"group:food_toast", "group:food_garlic_clove", "group:food_garlic_clove"}
 })
 
 --= Donuts (thanks to Bockwurst for making the donut images)
@@ -131,7 +131,7 @@ minetest.register_craft({
 minetest.register_craftitem("farming:donut", {
 	description = S("Donut"),
 	inventory_image = "farming_donut.png",
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(4)
 })
 
 minetest.register_craft({
@@ -139,35 +139,35 @@ minetest.register_craft({
 	recipe = {
 		{"", "group:food_wheat", ""},
 		{"group:food_wheat", "group:food_sugar", "group:food_wheat"},
-		{"", "group:food_wheat", ""},
+		{"", "group:food_wheat", ""}
 	}
 })
 
 minetest.register_craftitem("farming:donut_chocolate", {
 	description = S("Chocolate Donut"),
 	inventory_image = "farming_donut_chocolate.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6)
 })
 
 minetest.register_craft({
 	output = "farming:donut_chocolate",
 	recipe = {
 		{"group:food_cocoa"},
-		{"farming:donut"},
+		{"farming:donut"}
 	}
 })
 
 minetest.register_craftitem("farming:donut_apple", {
 	description = S("Apple Donut"),
 	inventory_image = "farming_donut_apple.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6)
 })
 
 minetest.register_craft({
 	output = "farming:donut_apple",
 	recipe = {
 		{"default:apple"},
-		{"farming:donut"},
+		{"farming:donut"}
 	}
 })
 
@@ -176,7 +176,7 @@ minetest.register_craft({
 minetest.register_craftitem("farming:porridge", {
 	description = S("Porridge"),
 	inventory_image = "farming_porridge.png",
-	on_use = minetest.item_eat(6, "farming:bowl"),
+	on_use = minetest.item_eat(6, "farming:bowl")
 })
 
 minetest.after(0, function()
@@ -215,7 +215,7 @@ end)
 minetest.register_craftitem("farming:jaffa_cake", {
 	description = S("Jaffa Cake"),
 	inventory_image = "farming_jaffa_cake.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6)
 })
 
 minetest.register_craft({
@@ -341,7 +341,7 @@ minetest.register_node("farming:olive_oil", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
 	},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, food_oil = 1},
 	sounds = default.node_sound_glass_defaults(),
     
 })
@@ -436,3 +436,120 @@ minetest.register_craft({
 	},
     replacements = {{"farming:olive_oil", "vessels:glass_bottle"}}
 })
+
+-- Apple Pie
+
+minetest.register_craftitem("farming:apple_pie", {
+	description = S("Apple Pie"),
+	inventory_image = "farming_apple_pie.png",
+	on_use = minetest.item_eat(6)
+})
+
+minetest.register_craft({
+	output = "farming:apple_pie",
+	type = "shapeless",
+	recipe = {
+		"group:food_flour", "group:food_sugar",	"group:food_apple"
+	}
+})
+
+-- Cactus Juice
+
+minetest.register_craftitem("farming:cactus_juice", {
+	description = S("Cactus Juice"),
+	inventory_image = "farming_cactus_juice.png",
+	groups = {vessel = 1, drink = 1},
+	on_use = function(itemstack, user, pointed_thing)
+		if user then
+			if math.random(5) == 1 then
+				return minetest.do_item_eat(-1, "vessels:drinking_glass",
+						itemstack, user, pointed_thing)
+			else
+				return minetest.do_item_eat(2, "vessels:drinking_glass",
+						itemstack, user, pointed_thing)
+			end
+		end
+	end
+})
+
+minetest.register_craft({
+	output = "farming:cactus_juice 2",
+	type = "shapeless",
+	recipe = {
+		"vessels:drinking_glass", "vessels:drinking_glass",	"default:cactus"
+	}
+})
+
+-- Pasta
+
+minetest.register_craftitem("farming:pasta", {
+	description = S("Pasta"),
+	inventory_image = "farming_pasta.png",
+	groups = {food_pasta = 1}
+})
+
+if minetest.get_modpath("mobs_animal") or minetest.get_modpath("xanadu")then
+minetest.register_craft({
+	output = "farming:pasta",
+	type = "shapeless",
+	recipe = {
+		"group:food_flour", "group:food_butter"
+	}
+})
+else
+minetest.register_craft({
+	output = "farming:pasta",
+	type = "shapeless",
+	recipe = {
+		"group:food_flour", "group:food_oil"
+	},
+	replacements = {
+		{"group:food_oil", "vessels:glass_bottle"}
+	}
+})
+end
+
+-- Spaghetti
+
+minetest.register_craftitem("farming:spaghetti", {
+	description = S("Spaghetti"),
+	inventory_image = "farming_spaghetti.png",
+	on_use = minetest.item_eat(8)
+})
+
+minetest.register_craft({
+	output = "farming:spaghetti",
+	type = "shapeless",
+	recipe = {
+		"group:food_pasta", "group:food_tomato",
+		"group:food_garlic_clove", "group:food_garlic_clove"
+	}
+})
+
+-- Korean Bibimbap
+
+minetest.register_craftitem("farming:bibimbap", {
+	description = S("Bibimbap"),
+	inventory_image = "farming_bibimbap.png",
+	on_use = minetest.item_eat(8, "farming:bowl")
+})
+
+if minetest.get_modpath("mobs_animal") or minetest.get_modpath("xanadu")then
+minetest.register_craft({
+	output = "farming:bibimbap",
+	type = "shapeless",
+	recipe = {
+		"group:food_bowl", "group:food_egg", "group:food_chicken_raw",
+		"group:food_cabbage", "group:food_carrot"
+	}
+})
+else
+minetest.register_craft({
+	output = "farming:bibimbap",
+	type = "shapeless",
+	recipe = {
+		"group:food_bowl", "group:food_mushroom", "group:food_rice",
+		"group:food_cabbage", "group:food_carrot", "group:food_mushroom"
+	}
+})
+end

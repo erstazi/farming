@@ -46,7 +46,7 @@ minetest.register_craft( {
 
 -- crop definition
 
-local crop_def = {
+local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_soy_1.png"},
 	paramtype = "light",
@@ -66,44 +66,44 @@ local crop_def = {
 }
 
 -- stage 1
-minetest.register_node("farming:soy_1", table.copy(crop_def))
+minetest.register_node("farming:soy_1", table.copy(def))
 
 -- stage 2
-crop_def.tiles = {"farming_soy_2.png"}
-minetest.register_node("farming:soy_2", table.copy(crop_def))
+def.tiles = {"farming_soy_2.png"}
+minetest.register_node("farming:soy_2", table.copy(def))
 
 -- stage 3
-crop_def.tiles = {"farming_soy_3.png"}
-minetest.register_node("farming:soy_3", table.copy(crop_def))
+def.tiles = {"farming_soy_3.png"}
+minetest.register_node("farming:soy_3", table.copy(def))
 
 -- stage 4
-crop_def.tiles = {"farming_soy_4.png"}
-minetest.register_node("farming:soy_4", table.copy(crop_def))
+def.tiles = {"farming_soy_4.png"}
+minetest.register_node("farming:soy_4", table.copy(def))
 
 -- stage 5
-crop_def.tiles = {"farming_soy_5.png"}
-crop_def.drop = {
+def.tiles = {"farming_soy_5.png"}
+def.drop = {
 	max_items = 1, items = {
 		{items = {'farming:soy_pod'}, rarity = 1},
 	}
 }
-minetest.register_node("farming:soy_5", table.copy(crop_def))
+minetest.register_node("farming:soy_5", table.copy(def))
 
 -- stage 6
-crop_def.tiles = {"farming_soy_6.png"}
-crop_def.drop = {
+def.tiles = {"farming_soy_6.png"}
+def.drop = {
 	max_items = 3, items = {
 		{items = {'farming:soy_pod'}, rarity = 1},
 		{items = {'farming:soy_pod'}, rarity = 2},
 		{items = {'farming:soy_pod'}, rarity = 3},
 	}
 }
-minetest.register_node("farming:soy_6", table.copy(crop_def))
+minetest.register_node("farming:soy_6", table.copy(def))
 
 -- stage 7
-crop_def.tiles = {"farming_soy_7.png"}
-crop_def.groups.growing = 0
-crop_def.drop = {
+def.tiles = {"farming_soy_7.png"}
+def.groups.growing = 0
+def.drop = {
 	max_items = 5, items = {
 		{items = {'farming:soy_pod'}, rarity = 1},
 		{items = {'farming:soy_pod'}, rarity = 2},
@@ -112,7 +112,7 @@ crop_def.drop = {
 		{items = {'farming:soy_pod'}, rarity = 5},
 	}
 }
-minetest.register_node("farming:soy_7", table.copy(crop_def))
+minetest.register_node("farming:soy_7", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:soy_pod"] = {

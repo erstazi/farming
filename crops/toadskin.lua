@@ -26,7 +26,7 @@ minetest.register_craft({
 })
 
 -- melon definition
-local crop_def = {
+local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_pieldesapo_1.png"},
 	paramtype = "light",
@@ -43,41 +43,41 @@ local crop_def = {
 }
 
 -- stage 1
-minetest.register_node("farming:toadskin_1", table.copy(crop_def))
+minetest.register_node("farming:toadskin_1", table.copy(def))
 
 -- stage 2
-crop_def.tiles = {"farming_pieldesapo_2.png"}
-minetest.register_node("farming:toadskin_2", table.copy(crop_def))
+def.tiles = {"farming_pieldesapo_2.png"}
+minetest.register_node("farming:toadskin_2", table.copy(def))
 
 -- stage 3
-crop_def.tiles = {"farming_pieldesapo_3.png"}
-minetest.register_node("farming:toadskin_3", table.copy(crop_def))
+def.tiles = {"farming_pieldesapo_3.png"}
+minetest.register_node("farming:toadskin_3", table.copy(def))
 
 -- stage 4
-crop_def.tiles = {"farming_pieldesapo_4.png"}
-minetest.register_node("farming:toadskin_4", table.copy(crop_def))
+def.tiles = {"farming_pieldesapo_4.png"}
+minetest.register_node("farming:toadskin_4", table.copy(def))
 
 -- stage 5
-crop_def.tiles = {"farming_pieldesapo_5.png"}
-minetest.register_node("farming:toadskin_5", table.copy(crop_def))
+def.tiles = {"farming_pieldesapo_5.png"}
+minetest.register_node("farming:toadskin_5", table.copy(def))
 
 -- stage 6
-crop_def.tiles = {"farming_pieldesapo_6.png"}
-minetest.register_node("farming:toadskin_6", table.copy(crop_def))
+def.tiles = {"farming_pieldesapo_6.png"}
+minetest.register_node("farming:toadskin_6", table.copy(def))
 
 -- stage 7
-crop_def.drawtype = "nodebox"
-crop_def.description = S("Santa Claus Melon")
-crop_def.tiles = {"farming_pieldesapo_top.png", "farming_pieldesapo_top.png", "farming_pieldesapo_side.png"}
-crop_def.selection_box = {-.5, -.5, -.5, .5, .5, .5}
-crop_def.walkable = true
-crop_def.groups = {
+def.drawtype = "nodebox"
+def.description = S("Santa Claus Melon")
+def.tiles = {"farming_pieldesapo_top.png", "farming_pieldesapo_top.png", "farming_pieldesapo_side.png"}
+def.selection_box = {-.5, -.5, -.5, .5, .5, .5}
+def.walkable = true
+def.groups = {
 	food_toadskin = 1, snappy = 2, oddly_breakable_by_hand = 1,
 	flammable = 2, plant = 1
 }
 
-crop_def.drop = "farming:toadskin_7"
-minetest.register_node("farming:toadskin_7", table.copy(crop_def))
+def.drop = "farming:toadskin_7"
+minetest.register_node("farming:toadskin_7", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:toadskin"] = {

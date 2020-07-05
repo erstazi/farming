@@ -11,7 +11,7 @@ minetest.register_craftitem("farming:parsley", {
 })
 
 -- crop definition
-local crop_def = {
+local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_parsley_1.png"},
 	paramtype = "light",
@@ -28,23 +28,23 @@ local crop_def = {
 }
 
 -- stage 1
-minetest.register_node("farming:parsley_1", table.copy(crop_def))
+minetest.register_node("farming:parsley_1", table.copy(def))
 
 -- stage 2
-crop_def.tiles = {"farming_parsley_2.png"}
-minetest.register_node("farming:parsley_2", table.copy(crop_def))
+def.tiles = {"farming_parsley_2.png"}
+minetest.register_node("farming:parsley_2", table.copy(def))
 
 -- stage 3 (final)
-crop_def.tiles = {"farming_parsley_3.png"}
-crop_def.groups.growing = 0
-crop_def.drop = {
+def.tiles = {"farming_parsley_3.png"}
+def.groups.growing = 0
+def.drop = {
 	items = {
 		{items = {"farming:parsley"}, rarity = 1},
 		{items = {"farming:parsley"}, rarity = 2},
         {items = {"farming:parsley"}, rarity = 3}
 	}
 }
-minetest.register_node("farming:parsley_3", table.copy(crop_def))
+minetest.register_node("farming:parsley_3", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:parsley"] = {
