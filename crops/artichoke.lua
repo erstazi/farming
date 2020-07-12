@@ -48,7 +48,7 @@ def.tiles = {"farming_artichoke_5.png"}
 def.groups.growing = 0
 def.drop = {
 	items = {
-		{items = {"farming:artichoke"}, rarity = 1},
+		{items = {"farming:artichoke 2"}, rarity = 1},
 		{items = {"farming:artichoke"}, rarity = 2},
 	}
 }
