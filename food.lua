@@ -539,8 +539,9 @@ minetest.register_craft({
 	output = "farming:bibimbap",
 	type = "shapeless",
 	recipe = {
-		"group:food_bowl", "group:food_egg", "group:food_chicken_raw",
-		"group:food_cabbage", "group:food_carrot"
+		"group:food_bowl", "group:food_egg", "group:food_rice",
+		"group:food_chicken_raw", "group:food_cabbage", "group:food_carrot",
+		"group:food_chili_pepper"
 	}
 })
 else
@@ -549,7 +550,8 @@ minetest.register_craft({
 	type = "shapeless",
 	recipe = {
 		"group:food_bowl", "group:food_mushroom", "group:food_rice",
-		"group:food_cabbage", "group:food_carrot", "group:food_mushroom"
+		"group:food_cabbage", "group:food_carrot", "group:food_mushroom",
+		"group:food_chili_pepper"
 	}
 })
 end
