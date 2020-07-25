@@ -635,6 +635,7 @@ farming.blackberry = 0.001
 farming.soy = 0.001
 farming.vanilla = 0.001
 farming.toadskin = 0.001
+farming.tigernuts = 0.001
 farming.rarety = 0.002
 
 
@@ -706,6 +707,7 @@ ddoo("blackberry.lua", farming.blackberry)
 ddoo("soy.lua", farming.soy)
 ddoo("vanilla.lua", farming.vanilla)
 ddoo("toadskin.lua", farming.toadskin)
+ddoo("tigernuts.lua", farming.tigernuts)
 ddoo("mint.lua", farming.mint)
 ddoo("cabbage.lua", farming.cabbage)
 

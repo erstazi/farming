@@ -29,6 +29,35 @@ local def = {
 	sounds = default.node_sound_leaves_defaults()
 }
 
+-- sauerkraut (thanks to h-v-smacker's for canned_food XCF template - https://github.com/h-v-smacker/canned_food)
+minetest.register_node("farming:sauerkraut", {
+	description = S("Sauerkraut"),
+	drawtype = "plantlike",
+	tiles = {"farming_sauerkraut.png"},
+	inventory_image = "farming_sauerkraut.png",
+	wield_image = "farming_sauerkraut.png",
+	paramtype = "light",
+	walkable = false,
+	is_ground_content = false,
+	on_use = minetest.item_eat(5),
+	sounds = default.node_sound_glass_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
+	},
+	groups = { dig_immediate = 3, attached_node = 1 }
+})
+
+if minetest.get_modpath("wine") == nil then
+    minetest.register_craft({
+	type = "shapeless",
+	output = "farming:sauerkraut",
+	recipe = {
+		"vessels:glass_bottle", "farming:cabbage"
+	}
+})
+end
+
 -- stage 1
 minetest.register_node("farming:cabbage_1", table.copy(def))
 
