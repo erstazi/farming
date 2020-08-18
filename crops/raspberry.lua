@@ -14,11 +14,21 @@ minetest.register_craftitem("farming:raspberries", {
 })
 
 -- raspberry smoothie
-minetest.register_craftitem("farming:smoothie_raspberry", {
+minetest.register_node("farming:smoothie_raspberry", {
 	description = S("Raspberry Smoothie"),
+	drawtype = "plantlike",
+	tiles = {"farming_raspberry_smoothie.png"},
 	inventory_image = "farming_raspberry_smoothie.png",
+	wield_image = "farming_raspberry_smoothie.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
-	groups = {vessel = 1, drink = 1}
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({

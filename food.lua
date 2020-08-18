@@ -454,11 +454,18 @@ minetest.register_craft({
 })
 
 -- Cactus Juice
-
-minetest.register_craftitem("farming:cactus_juice", {
+minetest.register_node("farming:cactus_juice", {
 	description = S("Cactus Juice"),
+	drawtype = "plantlike",
+	tiles = {"farming_cactus_juice.png"},
 	inventory_image = "farming_cactus_juice.png",
-	groups = {vessel = 1, drink = 1},
+	wield_image = "farming_cactus_juice.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = function(itemstack, user, pointed_thing)
 		if user then
 			if math.random(5) == 1 then
@@ -469,7 +476,9 @@ minetest.register_craftitem("farming:cactus_juice", {
 						itemstack, user, pointed_thing)
 			end
 		end
-	end
+	end,
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({

@@ -44,11 +44,21 @@ minetest.register_craft( {
 })
 
 -- pineapple juice
-minetest.register_craftitem("farming:pineapple_juice", {
+minetest.register_node("farming:pineapple_juice", {
 	description = S("Pineapple Juice"),
+	drawtype = "plantlike",
+	tiles = {"farming_pineapple_juice.png"},
 	inventory_image = "farming_pineapple_juice.png",
+	wield_image = "farming_pineapple_juice.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
-	groups = {vessel = 1, drink = 1}
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({

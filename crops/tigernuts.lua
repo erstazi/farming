@@ -11,11 +11,21 @@ minetest.register_craftitem("farming:tigernuts", {
 })
 
 -- orxata de xufa
-minetest.register_craftitem("farming:orxata_glass", {
+minetest.register_node("farming:orxata_glass", {
 	description = S("Orxata de Xufa"),
+	drawtype = "plantlike",
+	tiles = {"farming_orxata_glass.png"},
 	inventory_image = "farming_orxata_glass.png",
+	wield_image = "farming_orxata_glass.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
-	groups = {vessel = 1, drink = 1}
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({
@@ -31,9 +41,20 @@ minetest.register_craft({
 })
 
 -- bottle of orxata
-minetest.register_craftitem("farming:orxata_bottle", {
+minetest.register_node("farming:orxata_bottle", {
 	description = S("Bottle of Orxata"),
+	drawtype = "plantlike",
+	tiles = {"farming_orxata_bottle.png"},
 	inventory_image = "farming_orxata_bottle.png",
+	wield_image = "farming_orxata_bottle.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({

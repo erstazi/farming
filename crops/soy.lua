@@ -25,11 +25,21 @@ minetest.register_craft({
 })
 
 -- soy milk
-minetest.register_craftitem("farming:soy_milk", {
+minetest.register_node("farming:soy_milk", {
 	description = S("Soy Milk"),
+	drawtype = "plantlike",
+	tiles = {"farming_soy_milk_glass.png"},
 	inventory_image = "farming_soy_milk_glass.png",
-	groups = {flammable = 2},
+	wield_image = "farming_soy_milk_glass.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft( {

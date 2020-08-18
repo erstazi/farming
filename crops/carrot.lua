@@ -18,18 +18,28 @@ minetest.register_craftitem("farming:carrot", {
 })
 
 -- carrot juice
-minetest.register_craftitem("farming:carrot_juice", {
+minetest.register_node("farming:carrot_juice", {
 	description = S("Carrot Juice"),
+	drawtype = "plantlike",
+	tiles = {"farming_carrot_juice.png"},
 	inventory_image = "farming_carrot_juice.png",
+	wield_image = "farming_carrot_juice.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
+	},
 	on_use = minetest.item_eat(4, "vessels:drinking_glass"),
-	groups = {vessel = 1, drink = 1}
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft({
 	output = "farming:carrot_juice",
-	type = "shapeless",
 	recipe = {
-		"vessels:drinking_glass", "group:food_carrot"
+		{"group:food_carrot"},
+		{"vessels:drinking_glass"}
 	}
 })
 

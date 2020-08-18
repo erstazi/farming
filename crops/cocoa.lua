@@ -125,10 +125,21 @@ minetest.register_craft( {
 })
 
 -- cocoa with milk glass
-minetest.register_craftitem("farming:cocoa_glass", {
-	description = S("Glass of Cocoa"),
+minetest.register_node("farming:cocoa_glass", {
+	description = S("Glass of Cocoa with Milk"),
+	drawtype = "plantlike",
+	tiles = {"farming_cocoa_milk_glass.png"},
 	inventory_image = "farming_cocoa_milk_glass.png",
+	wield_image = "farming_cocoa_milk_glass.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.3, 0.3}
+	},
 	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, drink = 1},
+	sounds = default.node_sound_glass_defaults()
 })
 
 minetest.register_craft( {
