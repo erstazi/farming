@@ -146,6 +146,26 @@ minetest.register_craft({
 	}
 })
 
+-- breadcrumbs
+minetest.register_craftitem("farming:breadcrumbs", {
+	description = S("Breadcrumbs"),
+	inventory_image = "farming_breadcrumbs.png",
+	groups = {food_breadcrumbs = 1, flammable = 1}
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:breadcrumbs",
+	recipe = {"farming:bread", "farming:bread", "farming:bread", "farming:bread"}
+})
+
+if minetest.get_modpath("technic") then
+	minetest.register_on_mods_loaded(function()			
+		technic.register_recipe("grinding", { input = {"farming:bread"}, output = "farming:breadcrumbs 2", time = 2})		
+	end)
+end
+
+
 -- wheat definition
 local def = {
 	drawtype = "plantlike",
