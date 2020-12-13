@@ -434,7 +434,10 @@ minetest.register_craft({
 		{"group:food_egg", "ethereal:pickled_olives", "group:food_mayonnaise"},
 		{"group:food_tuna_canned", "group:food_bowl", "farming:olive_oil"}
 	},
-    replacements = {{"farming:olive_oil", "vessels:glass_bottle"}}
+    replacements = {
+		{"farming:olive_oil", "vessels:glass_bottle"},
+		{"ethereal:tuna_canned", "ethereal:tuna_canned_empty"}
+	}
 })
 
 -- Apple Pie
