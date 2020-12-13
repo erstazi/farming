@@ -94,20 +94,20 @@ def.drop = {
 	items = {
 		{items = {'farming:vanilla'}, rarity = 1},
 		{items = {'farming:vanilla'}, rarity = 2},
-		{items = {'farming:vanilla'}, rarity = 3},
+		{items = {'farming:vanilla'}, rarity = 3}
 	}
 }
 minetest.register_node("farming:vanilla_7", table.copy(def))
 
 -- stage 8 (final)
 def.tiles = {"farming_vanilla_8.png"}
-def.groups.growing = 0
+def.groups.growing = nil
 def.drop = {
 	items = {
 		{items = {'farming:vanilla 2'}, rarity = 1},
 		{items = {'farming:vanilla 2'}, rarity = 2},
 		{items = {'farming:vanilla 2'}, rarity = 2},
-        {items = {'farming:vanilla 2'}, rarity = 3},
+		{items = {'farming:vanilla 2'}, rarity = 3}
 	}
 }
 minetest.register_node("farming:vanilla_8", table.copy(def))
@@ -116,7 +116,7 @@ minetest.register_node("farming:vanilla_8", table.copy(def))
 farming.registered_plants["farming:vanilla"] = {
 	crop = "farming:vanilla",
 	seed = "farming:vanilla",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 8
 }

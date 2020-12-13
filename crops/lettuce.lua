@@ -8,10 +8,9 @@ minetest.register_craftitem("farming:lettuce", {
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "farming:lettuce_1")
 	end,
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(2),
 })
 
--- crop definition
 local def = {
 	drawtype = "plantlike",
 	tiles = {"farming_lettuce_1.png"},
@@ -45,11 +44,11 @@ minetest.register_node("farming:lettuce_4", table.copy(def))
 
 -- stage 5 (final)
 def.tiles = {"farming_lettuce_5.png"}
-def.groups.growing = 0
+def.groups.growing = nil
 def.drop = {
 	items = {
 		{items = {'farming:lettuce 2'}, rarity = 1},
-		{items = {'farming:lettuce 2'}, rarity = 2},
+		{items = {'farming:lettuce 1'}, rarity = 2},
 	}
 }
 minetest.register_node("farming:lettuce_5", table.copy(def))
@@ -58,7 +57,7 @@ minetest.register_node("farming:lettuce_5", table.copy(def))
 farming.registered_plants["farming:lettuce"] = {
 	crop = "farming:lettuce",
 	seed = "farming:lettuce",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 5
 }

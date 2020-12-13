@@ -78,21 +78,23 @@ minetest.register_craft( {
 	output = "farming:hemp_fibre 8",
 	recipe = {
 		{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"},
-		{"farming:hemp_leaf", "bucket:bucket_water", "farming:hemp_leaf"},
+		{"farming:hemp_leaf", "group:water_bucket", "farming:hemp_leaf"},
 		{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"}
 	},
-	replacements = {{ "bucket:bucket_water", "bucket:bucket_empty"}}
+	replacements = {{"group:water_bucket", "bucket:bucket_empty"}}
 })
 
-minetest.register_craft( {
-	output = "farming:hemp_fibre 8",
-	recipe = {
-		{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"},
-		{"farming:hemp_leaf", "bucket:bucket_river_water", "farming:hemp_leaf"},
-		{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"}
-	},
-	replacements = {{ "bucket:bucket_river_water", "bucket:bucket_empty"}}
-})
+if minetest.get_modpath("bucket_wooden") then
+	minetest.register_craft( {
+		output = "farming:hemp_fibre 8",
+		recipe = {
+			{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"},
+			{"farming:hemp_leaf", "group:water_bucket_wooden", "farming:hemp_leaf"},
+			{"farming:hemp_leaf", "farming:hemp_leaf", "farming:hemp_leaf"}
+		},
+		replacements = {{"group:water_bucket_wooden", "bucket_wooden:bucket_empty"}}
+	})
+end
 
 -- hemp block
 minetest.register_node("farming:hemp_block", {
@@ -254,7 +256,7 @@ minetest.register_node("farming:hemp_8", table.copy(def))
 farming.registered_plants["farming:hemp"] = {
 	crop = "farming:hemp",
 	seed = "farming:seed_hemp",
-	minlight = 13,
-	maxlight = 15,
+	mminlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 8
 }

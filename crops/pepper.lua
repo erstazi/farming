@@ -108,7 +108,7 @@ minetest.register_node("farming:pepper_3", table.copy(def))
 def.tiles = {"crops_pepper_plant_4.png"}
 minetest.register_node("farming:pepper_4", table.copy(def))
 
--- stage 5
+-- stage 5 (green pepper)
 def.tiles = {"crops_pepper_plant_5.png"}
 def.drop = {
 	max_items = 2, items = {
@@ -140,14 +140,14 @@ def.drop = {
 	}
 }
 minetest.register_node("farming:pepper_7", table.copy(def))
-def.groups.growing = 0
+def.groups.growing = nil
 
 -- add to registered_plants
 farming.registered_plants["farming:pepper"] = {
 	crop = "farming:pepper",
 	seed = "farming:peppercorn",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 7
 }
 

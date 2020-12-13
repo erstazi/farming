@@ -11,7 +11,7 @@ minetest.register_craftitem("farming:coffee_beans", {
 	end
 })
 
--- cold cup of coffee
+-- cup of coffee
 minetest.register_node("farming:coffee_cup", {
 	description = S("Cold Cup of Coffee"),
 	drawtype = "torchlike", --"plantlike",
@@ -224,7 +224,7 @@ minetest.register_node("farming:coffee_5", table.copy(def))
 farming.registered_plants["farming:coffee"] = {
 	crop = "farming:coffee",
 	seed = "farming:coffee_beans",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 5
 }

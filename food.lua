@@ -82,12 +82,26 @@ minetest.register_craft({
 	recipe = {
 		{"flowers:rose", "flowers:rose", "flowers:rose"},
 		{"flowers:rose", "flowers:rose", "flowers:rose"},
-		{"bucket:bucket_water", "vessels:glass_bottle", ""},
+		{"group:water_bucket", "vessels:glass_bottle", ""},
 	},
 	replacements = {
-		{"bucket:bucket_water", "bucket:bucket_empty"},
+		{"group:water_bucket", "bucket:bucket_empty"}
 	}
 })
+
+if minetest.get_modpath("bucket_wooden") then
+	minetest.register_craft({
+		output = "farming:rose_water",
+		recipe = {
+			{"flowers:rose", "flowers:rose", "flowers:rose"},
+			{"flowers:rose", "flowers:rose", "flowers:rose"},
+			{"group:water_bucket_wooden", "vessels:glass_bottle"}
+		},
+		replacements = {
+			{"group:water_bucket_wooden", "bucket_wooden:bucket_empty"}
+		}
+	})
+end
 
 --= Turkish Delight
 
@@ -179,36 +193,18 @@ minetest.register_craftitem("farming:porridge", {
 	on_use = minetest.item_eat(6, "farming:bowl")
 })
 
-minetest.after(0, function()
-
-	local fluid = "bucket:bucket_water"
-	local fluid_return = "bucket:bucket_water"
-
-	if minetest.get_modpath("mobs") and mobs and mobs.mod == "redo" then
-		fluid = "group:food_milk"
-		fluid_return = "mobs:bucket_milk"
-	end
-
-	minetest.register_craft({
-		type = "shapeless",
-		output = "farming:porridge",
-		recipe = {
-			"group:food_barley", "group:food_barley", "group:food_wheat",
-			"group:food_wheat", "group:food_bowl", fluid
-		},
-		replacements = {{fluid_return, "bucket:bucket_empty"}}
-	})
-
-	minetest.register_craft({
-		type = "shapeless",
-		output = "farming:porridge",
-		recipe = {
-			"group:food_oats", "group:food_oats", "group:food_oats",
-			"group:food_oats", "group:food_bowl", fluid
-		},
-		replacements = {{fluid_return, "bucket:bucket_empty"}}
-	})
-end)
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:porridge",
+	recipe = {
+		"group:food_oats", "group:food_oats", "group:food_oats",
+		"group:food_oats", "group:food_bowl", "group:food_milk_glass"
+	},
+	replacements = {
+		{"mobs:glass_milk", "vessels:drinking_glass"},
+		{"farming:soy_milk", "vessels:drinking_glass"}
+	}
+})
 
 --= Jaffa Cake
 
@@ -567,3 +563,57 @@ minetest.register_craft({
 	}
 })
 end
+
+-- Burger
+
+minetest.register_craftitem("farming:burger", {
+	description = S("Meat Burger"),
+	inventory_image = "farming_burger_meat.png",
+	on_use = minetest.item_eat(16),
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:burger",
+	recipe = {
+		"farming:bread", "group:food_meat", "group:food_cheese",
+		"group:food_tomato", "group:food_cucumber", "group:food_onion",
+		"group:food_lettuce"
+	}
+})
+
+-- Salad
+
+minetest.register_craftitem("farming:salad", {
+	description = S("Salad"),
+	inventory_image = "farming_salad.png",
+	on_use = minetest.item_eat(8, "farming:bowl")
+})
+
+minetest.register_craft({
+	output = "farming:salad",
+	type = "shapeless",
+	recipe = {
+		"group:food_bowl", "group:food_tomato", "group:food_cucumber",
+		"group:food_lettuce", "group:food_oil"
+	},
+})
+
+-- Triple Berry Smoothie
+
+minetest.register_craftitem("farming:smoothie_berry", {
+	description = S("Triple Berry Smoothie"),
+	inventory_image = "farming_berry_smoothie.png",
+	on_use = minetest.item_eat(6, "vessels:drinking_glass"),
+	groups = {vessel = 1, drink = 1}
+})
+
+minetest.register_craft({
+	output = "farming:smoothie_berry",
+	type = "shapeless",
+	recipe = {
+		"group:food_raspberries", "group:food_blackberry",
+		"group:food_strawberry", "group:food_banana",
+		"vessels:drinking_glass"
+	}
+})

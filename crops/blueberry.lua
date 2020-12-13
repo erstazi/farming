@@ -3,7 +3,7 @@ local S = farming.intllib
 
 -- blueberries
 minetest.register_craftitem("farming:blueberries", {
-	description = S("Blueberries"),
+	description = S("Wild Blueberries"),
 	inventory_image = "farming_blueberries.png",
 	groups = {seed = 2, food_blueberries = 1, food_blueberry = 1,
 			food_berry = 1, flammable = 2},
@@ -86,7 +86,7 @@ minetest.register_node("farming:blueberry_4", table.copy(def))
 farming.registered_plants["farming:blueberries"] = {
 	crop = "farming:blueberry",
 	seed = "farming:blueberries",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 4
 }

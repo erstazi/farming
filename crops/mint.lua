@@ -32,12 +32,27 @@ minetest.register_craft({
 	type = "shapeless",
 	recipe = {
 		"vessels:drinking_glass", "group:food_mint", "group:food_mint",
-		"group:food_mint", "bucket:bucket_water"
+		"group:food_mint", "group:water_bucket"
 	},
 	replacements = {
-		{"bucket:bucket_water", "bucket:bucket_empty"}
+		{"group:water_bucket", "bucket:bucket_empty"}
 	}
 })
+
+if minetest.get_modpath("bucket_wooden") then
+	minetest.register_craft({
+		output = "farming:mint_tea",
+		type = "shapeless",
+		recipe = {
+			"vessels:drinking_glass", "group:food_mint",
+			"group:food_mint", "group:food_mint",
+			"group:water_bucket_wooden"
+		},
+		replacements = {
+			{"group:water_bucket_wooden", "bucket_wooden:bucket_empty"}
+		}
+	})
+end
 
 -- mint definition
 local def = {
@@ -83,7 +98,7 @@ minetest.register_node("farming:mint_4", table.copy(def))
 farming.registered_plants["farming:mint"] = {
 	crop = "farming:mint",
 	seed = "farming:seed_mint",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 4
 }

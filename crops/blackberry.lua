@@ -42,7 +42,7 @@ minetest.register_node("farming:blackberry_3", table.copy(def))
 
 -- stage 4 (final)
 def.tiles = {"farming_blackberry_4.png"}
-def.groups.growing = 0
+def.groups.growing = nil
 def.drop = {
 	items = {
 		{items = {'farming:blackberry 2'}, rarity = 1},
@@ -56,7 +56,7 @@ minetest.register_node("farming:blackberry_4", table.copy(def))
 farming.registered_plants["farming:blackberry"] = {
 	crop = "farming:blackberry",
 	seed = "farming:blackberry",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 4
 }
