@@ -257,6 +257,26 @@ minetest.register_craft({
               "group:food_bowl"},
 })
 
+-- Vegan Cheese
+
+minetest.register_craftitem("farming:vegan_cheese", {
+	description = S("Vegan Cheese"),
+	inventory_image = "farming_vegan_cheese.png",
+	on_use = minetest.item_eat(2),
+	groups = {food_cheese = 1, flammable = 2},
+})
+
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:vegan_cheese",
+	recipe = {
+		"ethereal:coconut_slice", "ethereal:coconut_slice", "group:food_salt",
+		"group:food_flour", "group:food_flour", "group:food_flour",
+		"ethereal:agar_powder", "group:food_lemon"
+	}
+})
+
 -- Meat burger
 
 minetest.register_craftitem("farming:burger_meat", {
@@ -341,7 +361,7 @@ minetest.register_node("farming:olive_oil", {
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1, food_oil = 1},
 	sounds = default.node_sound_glass_defaults(),
-    
+
 })
 
 minetest.register_craft({
